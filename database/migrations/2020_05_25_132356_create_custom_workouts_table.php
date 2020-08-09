@@ -19,7 +19,7 @@ class CreateCustomWorkoutsTable extends Migration
             $table->string('slug', 255)->unique();
             $table->text('notes')->nullable();
             $table->json('routine')->nullable();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }
