@@ -1,6 +1,11 @@
 <?php
+namespace Database\Seeders;
 
+use App\Models\Tag;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class TagsSeeder extends Seeder
 {
@@ -31,7 +36,7 @@ class TagsSeeder extends Seeder
 
         foreach ( $tags as $tag) {        
 
-            $t = App\Tag::create([
+            $t = Tag::create([
                 'name' => $tag,
                 'slug' => Str::slug($tag),
             ]);

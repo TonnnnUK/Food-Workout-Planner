@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -69,16 +69,16 @@ class User extends Authenticatable
 
     public function custom_workouts()
     {
-        return $this->hasMany('App\CustomWorkout');
+        return $this->hasMany(CustomWorkout::class);
     }
 
     public function meals()
     {
-        return $this->hasMany('App\Meal');
+        return $this->hasMany(Meal::class);
     }
 
     public function locations()
     {
-        return $this->hasMany('App\Location');
+        return $this->hasMany(Location::class);
     }
 }

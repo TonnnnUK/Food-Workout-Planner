@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Location;
-use App\CustomWorkout;
+use App\Models\User;
+use App\Models\Location;
+use App\Models\CustomWorkout;
 use GuzzleHttp\Client;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;

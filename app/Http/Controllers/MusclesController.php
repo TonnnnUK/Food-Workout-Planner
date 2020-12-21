@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Muscle;
+use App\Models\Muscle;
 use Illuminate\Http\Request;
 
 class MusclesController extends Controller

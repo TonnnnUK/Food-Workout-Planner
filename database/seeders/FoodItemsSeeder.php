@@ -1,8 +1,12 @@
 <?php
+namespace Database\Seeders;
 
-use App\FoodItem;
-use App\FoodType;
+use App\Models\FoodItem;
+use App\Models\FoodType;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class FoodItemsSeeder extends Seeder
 {

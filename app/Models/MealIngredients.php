@@ -10,6 +10,6 @@ class MealIngredients extends Model
 
     public function unit()
     {
-        return $this->belongsTo('App\Unit');
+        return $this->belongsTo(Unit::class);
     }
 }

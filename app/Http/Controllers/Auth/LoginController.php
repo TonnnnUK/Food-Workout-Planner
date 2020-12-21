@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Hash;
 use Socialite;
 use Str;
-use App\User;
+use App\Models\User;
 
 
 class LoginController extends Controller

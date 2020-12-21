@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
@@ -23,16 +23,16 @@ class CustomWorkout extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag')->withTimestamps();
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
     public function exercises() {
-        return $this->belongsToMany('App\Exercise', 'custom_workout_exercises')->withTimestamps();
+        return $this->belongsToMany(Exercise::class, 'custom_workout_exercises')->withTimestamps();
     }
 
     public static function createSlug($user, $title)

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Meal;
-use App\User;
+use App\Models\Meal;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MealsController extends Controller

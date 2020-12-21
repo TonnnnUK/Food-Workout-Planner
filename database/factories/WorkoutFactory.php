@@ -1,8 +1,10 @@
 <?php
+namespace Database\Factories;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Workout;
+use App\Models\Workout;
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
 $factory->define(Workout::class, function (Faker $faker) {

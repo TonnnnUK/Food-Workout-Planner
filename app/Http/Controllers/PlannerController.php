@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Entry;
+use App\Models\Entry;
 use Illuminate\Http\Request;
 
 class PlannerController extends Controller

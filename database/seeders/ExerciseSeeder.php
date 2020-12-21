@@ -1,7 +1,11 @@
 <?php
+namespace Database\Seeders;
 
-use App\Exercise;
+use App\Models\Exercise;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class ExerciseSeeder extends Seeder
 {

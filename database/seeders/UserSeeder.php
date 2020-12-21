@@ -1,6 +1,11 @@
 <?php
+namespace Database\Seeders;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -12,7 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        $user = App\User::create([
+        $user = User::create([
             'name' => 'Anton',
             'email' => 'a.hutchinson86@gmail.com',
             'slug' => Str::slug('anton'),
@@ -21,6 +26,6 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        factory(App\User::class, 10)->create();
+        factory(User::class, 10)->create();
     }
 }

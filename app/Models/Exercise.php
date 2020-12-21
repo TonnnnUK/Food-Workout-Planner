@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,21 +29,21 @@ class Exercise extends Model
 
     public function muscles()
     {
-        return $this->belongsToMany('App\Muscle')->withTimestamps();
+        return $this->belongsToMany(Muscle::class)->withTimestamps();
     }
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag')->withTimestamps();
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
     public function equipment()
     {
-        return $this->belongsToMany('App\Equipment')->withTimestamps();
+        return $this->belongsToMany(Equipment::class)->withTimestamps();
     }
 
     public function custom_workouts()
     {
-        return $this->belongsToMany('App\CustomWorkout', 'custom_workout_exercises')->withTimestamps();
+        return $this->belongsToMany(CustomWorkout::class, 'custom_workout_exercises')->withTimestamps();
     }
 }
