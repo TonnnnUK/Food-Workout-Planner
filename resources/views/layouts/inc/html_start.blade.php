@@ -23,4 +23,5 @@
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     @yield('custom-style')
+    @livewireStyles
 </head>

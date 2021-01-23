@@ -15,10 +15,12 @@
         
         @include('layouts.inc.toasts')
 
+        @livewire('site-footer')
         <site-footer></site-footer>
         
     </div>
 
+    @livewireScripts
     @yield('custom-script')
 
 </body>
