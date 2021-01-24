@@ -14,8 +14,6 @@
         </main>
         
         @include('layouts.inc.toasts')
-
-        @livewire('site-footer')
         <site-footer></site-footer>
         
     </div>

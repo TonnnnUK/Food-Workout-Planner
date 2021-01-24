@@ -15,7 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/f7173e08c3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac2774b279.js" crossorigin="anonymous"></script>
     
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"  />

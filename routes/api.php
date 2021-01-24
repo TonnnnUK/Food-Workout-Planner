@@ -1,11 +1,11 @@
 <?php
 
-use App\Tag;
-use App\Muscle;
-use App\Workout;
-use App\Exercise;
-use App\FoodItem;
-use App\Equipment;
+use App\Models\Tag;
+use App\Models\Muscle;
+use App\Models\Workout;
+use App\Models\Exercise;
+use App\Models\FoodItem;
+use App\Models\Equipment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;

@@ -90,14 +90,14 @@ Route::get('food-types', 'FoodTypesController@index')->name('foodtypes');
 /*****************************/
 /* ******** RECIPES ******** */
 /*****************************/
-Route::get('/recipes', 'RecipeController@index')->name('recipes');
-Route::get('/recipes/add', 'RecipeController@create')->name('add-recipe');
+Route::get('/recipes', 'RecipeController@index')->name('recipes')->middleware('auth');
+Route::get('/recipes/add', 'RecipeController@create')->name('add-recipe')->middleware('auth');
 
 
 /*****************************/
 /* ********* MEALS ********* */
 /*****************************/
-Route::get('user/{user:slug}/meals', 'MealsController@userMeals')->name('userMeals');
-Route::get('user/{user:slug}/meals/{meal}', 'MealsController@show')->name('viewMeal');
+Route::get('user/{user:slug}/meals', 'MealsController@userMeals')->name('userMeals')->middleware(['auth', 'isOwner']);
+Route::get('user/{user:slug}/meals/{meal}', 'MealsController@show')->name('viewMeal')->middleware(['auth', 'isOwner']);
 
 
