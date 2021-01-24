@@ -23,9 +23,9 @@ class ExerciseFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $faker->name,
-            'slug' => Str::slug($faker->name),
-            'description' => $faker->paragraph,
+            'name' => $this->faker->name,
+            'slug' => Str::slug($this->faker->name),
+            'description' => $this->faker->paragraph,
         ];
     }
 }
