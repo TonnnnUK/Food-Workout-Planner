@@ -4,10 +4,13 @@
 @endsection
 @section('content')
 
-<div class="container mx-auto pt-20">
+<div class="container pt-20 mx-auto">
 
     <h1>Food Items in your {{$location->name}}</h1>
 
+    
+    <livewire:locations.location-items :location="$location" />
+    
 
 </div>
 

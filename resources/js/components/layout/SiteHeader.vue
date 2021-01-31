@@ -1,5 +1,5 @@
-<template>
-  <header class="container-fluid flex flex-row items-center justify-between px-2 py-5 bg-gray-800 text-white fixed w-full shadow-lg">
+#<template>
+  <header class="fixed flex flex-row items-center justify-between w-full px-2 py-5 text-white bg-gray-800 shadow-lg container-fluid">
     <div>
         <div class="menu-icon">
             <span></span>
@@ -11,7 +11,7 @@
         </a>
     </div>
 
-    <ul class="flex">
+    <ul class="flex-col hidden md:flex md:flex-row">
         <li class="mx-3" v-if="userLoggedIn">
             <a href="/planner">Planner</a>
         </li>

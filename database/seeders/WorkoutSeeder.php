@@ -17,6 +17,6 @@ class WorkoutSeeder extends Seeder
     public function run()
     {
         
-        factory(Workout::class, 20)->create();
+        Workout::factory()->count(20)->create();
     }
 }

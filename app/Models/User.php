@@ -59,6 +59,11 @@ class User extends Authenticatable
         });
     }
 
+    public function path()
+    {
+        return "user/{$this->slug}";
+    }
+
     public function role()
     {
         if ($this->id == 1 ) {

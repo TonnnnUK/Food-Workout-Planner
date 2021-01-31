@@ -18,6 +18,16 @@ class CreateExercisesEquipmentTable extends Migration
             $table->unsignedBigInteger('exercise_id');
             $table->unsignedBigInteger('equipment_id');
             $table->timestamps();
+
+            $table->foreign('exercise_id')
+                ->references('id')
+                ->on('exercises')
+                ->onDelete('cascade');
+
+            $table->foreign('equipment_id')
+                ->references('id')
+                ->on('equipment')
+                ->onDelete('cascade');
         });
     }
 

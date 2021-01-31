@@ -38,7 +38,9 @@ class ExerciseController extends Controller
         $exercise = Exercise::create([
             'name' => $request->name, 
             'slug' => $request->slug, 
-            'description' => $request->description 
+            'description' => $request->description,
+            'image' => $request->image,
+            'video_url' => isset($request->video_url) ? $request->video_url : null
         ]);
 
         return $exercise;
@@ -75,10 +77,13 @@ class ExerciseController extends Controller
      */
     public function update(Exercise $exercise, Request $request)
     {
+        
         $updated = Exercise::find($exercise->id);
         $updated->name = $request->name;
         $updated->slug = $request->slug;
         $updated->description = $request->description;
+        $updated->image = $request->image;
+        $updated->video_url = $request->video_url != 'null' ? $request->video_url : null;
         $updated->save();
         
         return response()->json([

@@ -12,9 +12,9 @@ class Location extends Model
     public static function createLocationsForNewUser($user)
     {
         $defaultlocations = [
-            'fridge',
-            'freezer',
-            'cupboard',
+            'Fridge',
+            'Freezer',
+            'Cupboard',
         ] ;
 
         foreach ($defaultlocations as $location){
@@ -24,5 +24,10 @@ class Location extends Model
                 'required' => 1
             ]);
         }
+    }
+
+    public function items()
+    {
+        return $this->belongsToMany(FoodItem::class, 'user_food_items', 'food_item_id', );
     }
 }

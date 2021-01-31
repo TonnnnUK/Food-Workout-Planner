@@ -7,25 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Exercise extends Model
 {
 
-    protected $fillable = [
-        'name', 
-        'slug', 
-        'description', 
-        'excerpt', 
-        'image', 
-        'video_url', 
-        'type_id'
-    ];
+    protected $protected = [];
 
-    // /**
-    //  * Get the route key for the model.
-    //  *
-    //  * @return string
-    //  */
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
 
     public function muscles()
     {

@@ -20,15 +20,29 @@ class isOwner
     {
 
         ///////////////////////////////
-        // View Meal
+        // View All User Meals
         //////////////////////////////
-        if ( $request->route()->getName() == 'viewMeal' ) {
-            // if the meal user (owner) is not equal to the logged in user don't allow access
-            if ($request->meal->user != Auth::user()){
-                return redirect('403');
+        if ( $request->route()->getName() == 'userMeals' ) {
+            // if user (owner) is not equal to the logged in user don't allow access
+            if (!Auth::check() || $request->user->id != Auth::user()->id){
+                return abort('401');
             }
 
         };
+
+        ///////////////////////////////
+        // View Meal
+        //////////////////////////////
+        if ( $request->route()->getName() == 'viewMeal' ) {
+            
+            // if the meal user (owner) is not equal to the logged in user don't allow access
+            if (Auth::check() && $request->meal->user != Auth::user()){
+                return abort('401');
+            }
+
+        };
+
+    
 
         return $next($request);
     }

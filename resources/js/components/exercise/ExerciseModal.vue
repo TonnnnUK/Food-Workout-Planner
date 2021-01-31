@@ -1,20 +1,27 @@
 <template>
     <modal name="exercise-modal" @before-open="beforeOpen" :height="`auto`">
         <div class="p-10">
-            <h2 class="text-xl mb-5 text-center">{{action}} Exercise</h2>
+            <h2 class="mb-5 text-xl text-center">{{action}} Exercise</h2>
             <form  v-on:submit.prevent="submitForm()">
-                <input class="w-full py-2 px-3 mb-5" v-if="exercise.id" :value="`ID: ${exercise.id}`" disabled />
+                <input class="w-full px-3 py-2 mb-5" v-if="exercise.id" :value="`ID: ${exercise.id}`" disabled />
                 <label for="">Name</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" 
+                <input class="w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
                         type="text" v-model="exercise.name" name="name">
                 <label for="">Slug</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" 
+                <input class="w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
                         type="text" v-model="exercise.slug" name="slug">
                 <label for="">Description</label>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                <textarea class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                          v-model="exercise.description" rows="10"></textarea>
 
-                <button class="bg-gray-500 px-5 py-2 mt-5"><span v-text="action === 'Edit' ? 'Update' : action"></span></button>
+                <label for="">Image</label>
+                <input class="w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+                        type="text" v-model="exercise.image" name="image">
+                <label for="">Video</label>
+                <input class="w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+                        type="text" v-model="exercise.video_url" name="video_url">
+                        
+                <button class="px-5 py-2 mt-5 bg-gray-500"><span v-text="action === 'Edit' ? 'Update' : action"></span></button>
             </form>
         </div>
     </modal>
@@ -27,11 +34,12 @@ export default {
     data() {
         return {
             exercise: {
-                id: null,
-                name: null,
-                slug: null,
-                description: null,
-                image: null,
+                id: '',
+                name: '',
+                slug: '',
+                description: '',
+                image: '',
+                video_url: '',
             },
             endpoint: null,
             action: 'Create',
@@ -48,6 +56,8 @@ export default {
                 this.exercise.name = event.params.exercise.name
                 this.exercise.slug = event.params.exercise.slug
                 this.exercise.description = event.params.exercise.description
+                this.exercise.image = event.params.exercise.image
+                this.exercise.video_url = event.params.exercise.video_url
             }
 
             this.action = event.params.action

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-    <div class="container mx-auto pt-20">
+    <div class="container pt-20 mx-auto">
         
         <page-header>Dashboard</page-header>
 
@@ -40,6 +40,7 @@
                         <small>- remove</small>
                     </div>
                 @endforeach
+                <a class="block mt-5" href="{{route('userMeals', Auth::user()->slug)}}">See all recipes</a>
             </div>
 
 
@@ -54,7 +55,7 @@
                     @endforeach
                 @endisset
 
-                <form method="POST" action="/add-location">
+                <form class="mt-5" method="POST" action="/add-location">
                     @csrf
                     <input type="text" name="name" class="p-2" placeholder="e.g fridge, cupboard" />
                     <button class="btn btn-grey">Create</button>

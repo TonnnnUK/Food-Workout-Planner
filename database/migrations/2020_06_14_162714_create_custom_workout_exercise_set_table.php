@@ -21,6 +21,11 @@ class CreateCustomWorkoutExerciseSetTable extends Migration
             $table->integer('weight')->nullable(); 
             $table->string('unit')->nullable(); 
             $table->timestamps();
+
+            $table->foreign('workout_exercise_id')
+                ->references('id')
+                ->on('custom_workout_exercises')
+                ->onDelete('cascade');
         });
     }
 

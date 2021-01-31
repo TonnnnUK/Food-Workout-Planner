@@ -18,6 +18,16 @@ class CreateCustomWorkoutsExercisesTable extends Migration
             $table->foreignId('custom_workout_id');
             $table->foreignId('exercise_id');
             $table->timestamps();
+
+            $table->foreign('custom_workout_id')
+                ->references('id')
+                ->on('custom_workouts')
+                ->onDelete('cascade');
+
+            $table->foreign('exercise_id')
+                ->references('id')
+                ->on('exercises')
+                ->onDelete('cascade');
         });
     }
 

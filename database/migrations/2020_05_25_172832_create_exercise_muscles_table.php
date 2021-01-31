@@ -18,6 +18,16 @@ class CreateExerciseMusclesTable extends Migration
             $table->unsignedBigInteger('exercise_id');
             $table->unsignedBigInteger('muscle_id');
             $table->timestamps();
+
+            $table->foreign('exercise_id')
+                ->references('id')
+                ->on('exercises')
+                ->onDelete('cascade');
+
+            $table->foreign('muscle_id')
+                ->references('id')
+                ->on('muscles')
+                ->onDelete('cascade');
         });
     }
 

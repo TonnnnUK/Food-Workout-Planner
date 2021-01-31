@@ -18,6 +18,17 @@ class CreateWorkoutTagsTable extends Migration
             $table->unsignedBigInteger('workout_id');
             $table->unsignedBigInteger('tag_id');
             $table->timestamps();
+
+            $table->foreign('workout_id')
+                ->references('id')
+                ->on('workouts')
+                ->onDelete('cascade');
+
+            $table->foreign('tag_id')
+                ->references('id')
+                ->on('tags')
+                ->onDelete('cascade');
+            
         });
     }
 

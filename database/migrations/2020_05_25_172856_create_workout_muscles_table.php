@@ -21,6 +21,16 @@ class CreateWorkoutMusclesTable extends Migration
             $table->tinyInteger('secondary');
             $table->tinyInteger('tertiary');
             $table->timestamps();
+
+            $table->foreign('workout_id')
+            ->references('id')
+            ->on('workouts')
+            ->onDelete('cascade');
+
+            $table->foreign('muscle_id')
+                ->references('id')
+                ->on('muscles')
+                ->onDelete('cascade');
         });
 
     }

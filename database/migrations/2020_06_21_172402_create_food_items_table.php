@@ -21,6 +21,11 @@ class CreateFoodItemsTable extends Migration
             $table->string('edamam_image')->nullable();
             $table->foreignId('food_type_id');
             $table->timestamps();
+
+            $table->foreign('food_type_id')
+                ->references('id')
+                ->on('food_types')
+                ->onDelete('cascade');
         });
     }
 

@@ -23,6 +23,11 @@ class CreateMealsTable extends Migration
             $table->string('image')->nullabe();
             $table->foreignId('user_id')->nullabe();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

@@ -23,12 +23,12 @@ class MealFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->title,
-            'servings' => $this->faker->title,
-            'description' => $this->faker->title,
-            'method' => $this->faker->title,
-            'link' => $this->faker->title,
-            'image' => $this->faker->title,
+            'name' => $this->faker->word,
+            'servings' => $this->faker->sentence(6, true),
+            'description' => $this->faker->sentence(15, true),
+            'method' => $this->faker->sentence(15, true),
+            'link' => $this->faker->domainName,
+            'image' => $this->faker->imageUrl,
             'user_id' => User::factory(),
         ];
     }

@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Meal extends Model
 {
+    
+    use HasFactory;
+
+    public function path()
+    {
+        return "{$this->user->id}/meal/{$this->id}";
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

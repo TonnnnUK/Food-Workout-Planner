@@ -2298,6 +2298,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['exercise'],
   data: function data() {
@@ -2425,15 +2429,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       exercise: {
-        id: null,
-        name: null,
-        slug: null,
-        description: null,
-        image: null
+        id: '',
+        name: '',
+        slug: '',
+        description: '',
+        image: '',
+        video_url: ''
       },
       endpoint: null,
       action: 'Create'
@@ -2448,6 +2460,8 @@ __webpack_require__.r(__webpack_exports__);
         this.exercise.name = event.params.exercise.name;
         this.exercise.slug = event.params.exercise.slug;
         this.exercise.description = event.params.exercise.description;
+        this.exercise.image = event.params.exercise.image;
+        this.exercise.video_url = event.params.exercise.video_url;
       }
 
       this.action = event.params.action;
@@ -53821,11 +53835,19 @@ var render = function() {
     _c("h1", { staticClass: "text-2xl text-center" }, [
       _vm._v(_vm._s(_vm.info.name))
     ]),
-    _vm._v("\n\n    " + _vm._s(_vm.info.description) + "\n\n\n    "),
+    _vm._v("\n\n    " + _vm._s(_vm.info.description) + "\n    \n    "),
+    _vm.info.image != ""
+      ? _c("img", { attrs: { src: _vm.info.image } })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.info.video_url != ""
+      ? _c("img", { attrs: { src: _vm.info.video_url } })
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "button",
       {
-        staticClass: "bg-gray-500 p-2",
+        staticClass: "p-2 bg-gray-500",
         on: {
           click: function($event) {
             $event.preventDefault()
@@ -53863,26 +53885,58 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            _vm._l(_vm.exercises, function(exercise) {
-              return _c("div", { key: exercise.id }, [
+    _c(
+      "div",
+      { staticClass: "flex flex-wrap justify-around col-md-8" },
+      _vm._l(_vm.exercises, function(exercise) {
+        return _c(
+          "div",
+          { key: exercise.id, staticClass: "w-2/5 p-2 mb-4 bg-white card " },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex flex-row items-center justify-around card-body"
+              },
+              [
                 _c("a", { attrs: { href: "/exercises/" + exercise.slug } }, [
                   _vm._v(
-                    "\n                            " +
+                    "\n                    " +
                       _vm._s(exercise.name) +
-                      "\n                        "
+                      "\n                "
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "inline-flex flex-col text-xs" }, [
+                  _c("span", [
+                    _vm._v("Image "),
+                    exercise.image
+                      ? _c("i", { staticClass: "text-green-500 fa fa-check" })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !exercise.image
+                      ? _c("i", { staticClass: "fa fa-times" })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v("Video "),
+                    exercise.video_url
+                      ? _c("i", { staticClass: "text-green-500 fa fa-check" })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !exercise.video_url
+                      ? _c("i", { staticClass: "fa fa-times" })
+                      : _vm._e()
+                  ])
                 ]),
                 _vm._v(" "),
                 _vm.isAdmin
                   ? _c(
                       "button",
                       {
+                        staticClass: "px-3 py-2 ml-5 bg-gray-400",
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -53896,13 +53950,13 @@ var render = function() {
                       [_vm._v("Edit")]
                     )
                   : _vm._e()
-              ])
-            }),
-            0
-          )
-        ])
-      ])
-    ])
+              ]
+            )
+          ]
+        )
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []
@@ -53935,7 +53989,7 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "p-10" }, [
-        _c("h2", { staticClass: "text-xl mb-5 text-center" }, [
+        _c("h2", { staticClass: "mb-5 text-xl text-center" }, [
           _vm._v(_vm._s(_vm.action) + " Exercise")
         ]),
         _vm._v(" "),
@@ -53952,7 +54006,7 @@ var render = function() {
           [
             _vm.exercise.id
               ? _c("input", {
-                  staticClass: "w-full py-2 px-3 mb-5",
+                  staticClass: "w-full px-3 py-2 mb-5",
                   attrs: { disabled: "" },
                   domProps: { value: "ID: " + _vm.exercise.id }
                 })
@@ -53970,7 +54024,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5",
+                "w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
               attrs: { type: "text", name: "name" },
               domProps: { value: _vm.exercise.name },
               on: {
@@ -53995,7 +54049,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5",
+                "w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
               attrs: { type: "text", name: "slug" },
               domProps: { value: _vm.exercise.slug },
               on: {
@@ -54020,7 +54074,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                "w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
               attrs: { rows: "10" },
               domProps: { value: _vm.exercise.description },
               on: {
@@ -54033,7 +54087,57 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { staticClass: "bg-gray-500 px-5 py-2 mt-5" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Image")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.exercise.image,
+                  expression: "exercise.image"
+                }
+              ],
+              staticClass:
+                "w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
+              attrs: { type: "text", name: "image" },
+              domProps: { value: _vm.exercise.image },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.exercise, "image", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "" } }, [_vm._v("Video")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.exercise.video_url,
+                  expression: "exercise.video_url"
+                }
+              ],
+              staticClass:
+                "w-full px-3 py-2 mb-5 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
+              attrs: { type: "text", name: "video_url" },
+              domProps: { value: _vm.exercise.video_url },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.exercise, "video_url", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "px-5 py-2 mt-5 bg-gray-500" }, [
               _c("span", {
                 domProps: {
                   textContent: _vm._s(
@@ -54179,12 +54283,12 @@ var render = function() {
     "header",
     {
       staticClass:
-        "container-fluid flex flex-row items-center justify-between px-2 py-5 bg-gray-800 text-white fixed w-full shadow-lg"
+        "fixed flex flex-row items-center justify-between w-full px-2 py-5 text-white bg-gray-800 shadow-lg container-fluid"
     },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("ul", { staticClass: "flex" }, [
+      _c("ul", { staticClass: "flex-col hidden md:flex md:flex-row" }, [
         _vm.userLoggedIn
           ? _c("li", { staticClass: "mx-3" }, [
               _c("a", { attrs: { href: "/planner" } }, [_vm._v("Planner")])

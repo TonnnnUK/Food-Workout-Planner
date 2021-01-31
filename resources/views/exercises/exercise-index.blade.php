@@ -4,12 +4,12 @@
 @endsection
 @section('content')
 
-<div class="container mx-auto pt-20">
+<div class="container pt-20 mx-auto">
 
     <h1>Exercises</h1>
 
     @auth @if ( auth()->user()->id == 1 )
-        <button class="btn btn-grey" 
+        <button class="mb-5 btn btn-grey" 
             @click.prevent="$modal.show('exercise-modal', {action: 'Create'})">
                 Create Exercise
         </button>

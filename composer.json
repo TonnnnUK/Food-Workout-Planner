@@ -14,7 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/legacy-factories": "^1.1",
-        "laravel/passport": "^10",
+        "laravel/passport": "^10.1",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
@@ -48,7 +48,8 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": ["tests/utils/functions.php"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -21,6 +21,21 @@ class CreateMealFoodItemsTable extends Migration
             $table->string('unit');
             $table->integer('qty');
             $table->timestamps();
+
+            $table->foreign('meal_id')
+                ->references('id')
+                ->on('meals')
+                ->onDelete('cascade');
+
+            $table->foreign('food_item_id')
+                ->references('id')
+                ->on('food_items')
+                ->onDelete('cascade');
+
+            $table->foreign('unit_id')
+                ->references('id')
+                ->on('units')
+                ->onDelete('cascade');
         });
     }
 

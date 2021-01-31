@@ -20,6 +20,21 @@ class CreateRecipeFoodItemsTable extends Migration
             $table->foreignId('unit_id');
             $table->integer('qty');
             $table->timestamps();
+
+            $table->foreign('recipe_id')
+                ->references('id')
+                ->on('recipes')
+                ->onDelete('cascade');
+            
+            $table->foreign('food_item_id')
+                ->references('id')
+                ->on('food_items')
+                ->onDelete('cascade');
+
+            $table->foreign('unit_id')
+                ->references('id')
+                ->on('units')
+                ->onDelete('cascade');
         });
     }
 
