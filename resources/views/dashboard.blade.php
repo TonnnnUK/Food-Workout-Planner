@@ -69,7 +69,7 @@
 
                 <h2 class="text-lg md:text-2xl">Been shopping?</h2>
 
-                <manage-inventory></manage-inventory>
+                <livewire:inventory.manage-inventory/>
 
         </div>
 
