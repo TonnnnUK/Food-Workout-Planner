@@ -68505,7 +68505,6 @@ var map = {
 	"./components/exercise/ExerciseList.vue": "./resources/js/components/exercise/ExerciseList.vue",
 	"./components/exercise/ExerciseModal.vue": "./resources/js/components/exercise/ExerciseModal.vue",
 	"./components/fooditems/FoodItemsList.vue": "./resources/js/components/fooditems/FoodItemsList.vue",
-	"./components/inventory/ManageInventory.vue": "./resources/js/components/inventory/ManageInventory.vue",
 	"./components/layout/SiteFooter.vue": "./resources/js/components/layout/SiteFooter.vue",
 	"./components/layout/SiteHeader.vue": "./resources/js/components/layout/SiteHeader.vue",
 	"./components/layout/components/EmphasisTitle.vue": "./resources/js/components/layout/components/EmphasisTitle.vue",
@@ -69266,17 +69265,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FoodItemsList_vue_vue_type_template_id_22339678___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/inventory/ManageInventory.vue":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/inventory/ManageInventory.vue ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\laragon\\www\\Food-Planner\\resources\\js\\components\\inventory\\ManageInventory.vue'");
 
 /***/ }),
 

@@ -1,4 +1,4 @@
-#<template>
+<template>
   <header class="fixed flex flex-row items-center justify-between w-full px-2 py-5 text-white bg-gray-800 shadow-lg container-fluid">
     <div>
         <div class="menu-icon">

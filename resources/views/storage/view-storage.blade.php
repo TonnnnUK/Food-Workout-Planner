@@ -1,13 +1,12 @@
 @extends('layouts.app')
 @section('page-title')
-    View your {{$location->name}}
+    Your Food Inventory: {{$location->name}}
 @endsection
 @section('content')
 
 <div class="container pt-20 mx-auto">
-
-    <h1>Food Items in your {{$location->name}}</h1>
-
+    
+    <page-header>Food Items in your {{$location->name}}</page-header>
     
     <livewire:locations.location-items :location="$location" />
     
