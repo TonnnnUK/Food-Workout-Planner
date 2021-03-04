@@ -1935,6 +1935,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1945,6 +1948,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       workout: {
+        notes: 'Workout notes...',
         exercises: []
       },
       exercises: []
@@ -2055,7 +2059,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['workout', 'exercises'],
   data: function data() {
@@ -2090,7 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
       insert.number = this.itemCount;
       insert.exercise = exercise;
       insert.weight = 0;
-      insert.metric = 'select';
+      insert.metric = 'kg';
       insert.reps = 10;
       insert.complete = false;
       this.routine.push(insert);
@@ -2105,7 +2108,7 @@ __webpack_require__.r(__webpack_exports__);
       this.routine.push(insert);
     },
     removeSet: function removeSet(item) {
-      this.routine.splice(this.routine.indexOf(item) - 1, 1);
+      this.routine.splice(this.routine.indexOf(item), 1);
     },
     saveWorkout: function saveWorkout() {
       this.workout.routine = JSON.stringify(this.routine);
@@ -9708,6 +9711,25 @@ function isnan (val) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "header {\n  z-index: 1;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -52568,6 +52590,36 @@ module.exports = __webpack_require__(63);
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SiteHeader.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/components/ToastAlert.vue?vue&type=style&index=0&id=5ff62454&scoped=true&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/components/ToastAlert.vue?vue&type=style&index=0&id=5ff62454&scoped=true&lang=css& ***!
@@ -53221,64 +53273,74 @@ var render = function() {
       }
     },
     [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.workout.name,
-            expression: "workout.name"
-          }
-        ],
-        staticClass:
-          "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5",
-        attrs: {
-          placeholder: "Workout Title",
-          type: "text",
-          name: "name",
-          required: ""
-        },
-        domProps: { value: _vm.workout.name },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.workout, "name", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("vue-editor", {
-        model: {
-          value: _vm.workout.notes,
-          callback: function($$v) {
-            _vm.$set(_vm.workout, "notes", $$v)
-          },
-          expression: "workout.notes"
-        }
-      }),
-      _vm._v(" "),
-      _c("section", { staticClass: "w-full" }, [_c("workout-exercises")], 1),
-      _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "w-full" },
-        [
-          _c("manage-workout", {
-            attrs: { workout: _vm.workout, exercises: _vm.exercises }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "d-inline-block btn btn-primary my-4 w-1/4" },
-        [_vm._v("Create")]
-      )
-    ],
-    1
+      _c("div", { staticClass: "flex justify-between" }, [
+        _c("div", { staticClass: "w-full lg:w-7/12" }, [
+          _c(
+            "section",
+            { staticClass: "w-full" },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.workout.name,
+                    expression: "workout.name"
+                  }
+                ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full lg:w-8/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5",
+                attrs: {
+                  placeholder: "Workout Title",
+                  type: "text",
+                  name: "name",
+                  required: ""
+                },
+                domProps: { value: _vm.workout.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.workout, "name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("workout-exercises"),
+              _vm._v(" "),
+              _c("manage-workout", {
+                attrs: { workout: _vm.workout, exercises: _vm.exercises }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "d-inline-block btn btn-primary my-4 w-1/4" },
+            [_vm._v("Create")]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "w-full lg:w-4/12" },
+          [
+            _c("vue-editor", {
+              model: {
+                value: _vm.workout.notes,
+                callback: function($$v) {
+                  _vm.$set(_vm.workout, "notes", $$v)
+                },
+                expression: "workout.notes"
+              }
+            })
+          ],
+          1
+        )
+      ])
+    ]
   )
 }
 var staticRenderFns = []
@@ -53312,15 +53374,14 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("section", { staticClass: "flex" }, [
+        _c("section", { staticClass: "flex flex-col" }, [
           _c(
             "div",
-            { staticClass: "flex flex-col w-2/3 px-3" },
+            { staticClass: "flex flex-col w-full lg:w-8/12 mb-3" },
             [
               _vm.routine.length < 1
                 ? _c("emphasis-title", [
-                    _vm._v("Select an exercise to add sets "),
-                    _c("i", { staticClass: "fas fa-long-arrow-alt-right" })
+                    _vm._v("Select an exercise to add sets")
                   ])
                 : _vm._e(),
               _vm._v(" "),
@@ -53356,37 +53417,44 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "label",
-                              { staticClass: "w-full", attrs: { for: "" } },
+                              {
+                                staticClass: "w-full lg:w-7/12",
+                                attrs: { for: "" }
+                              },
                               [_vm._v(_vm._s(item.exercise.name))]
                             ),
                             _vm._v(" "),
-                            _c("label", { attrs: { for: "" } }, [
-                              _vm._v("\n                          weight: "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: item.weight,
-                                    expression: "item.weight"
-                                  }
-                                ],
-                                staticClass: "bg-gray-200 w-1/4 text-center",
-                                attrs: { type: "text" },
-                                domProps: { value: item.weight },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                            _c("div", [
+                              _c("label", { attrs: { for: "" } }, [
+                                _vm._v(
+                                  "\n                              weight: "
+                                ),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: item.weight,
+                                      expression: "item.weight"
                                     }
-                                    _vm.$set(
-                                      item,
-                                      "weight",
-                                      $event.target.value
-                                    )
+                                  ],
+                                  staticClass: "bg-gray-200 w-1/4 text-center",
+                                  attrs: { type: "text" },
+                                  domProps: { value: item.weight },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        item,
+                                        "weight",
+                                        $event.target.value
+                                      )
+                                    }
                                   }
-                                }
-                              }),
+                                })
+                              ]),
                               _vm._v(" "),
                               _c(
                                 "select",
@@ -53399,7 +53467,8 @@ var render = function() {
                                       expression: "item.metric"
                                     }
                                   ],
-                                  attrs: { name: "", id: "" },
+                                  staticClass: "w-10",
+                                  attrs: { name: "metric" },
                                   on: {
                                     change: function($event) {
                                       var $$selectedVal = Array.prototype.filter
@@ -53424,10 +53493,6 @@ var render = function() {
                                   }
                                 },
                                 [
-                                  _c("option", { attrs: { value: "select" } }, [
-                                    _vm._v("select")
-                                  ]),
-                                  _vm._v(" "),
                                   _c("option", { attrs: { value: "kg" } }, [
                                     _vm._v("kg")
                                   ]),
@@ -53554,85 +53619,78 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "w-1/3" },
-            [
-              _vm._l(_vm.exercises, function(exercise) {
-                return _c(
-                  "div",
-                  { key: exercise.id, staticClass: "d-block w-full mb-2" },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "d-inline-block bg-blue-800 p-2 text-white",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            return _vm.addExercise(exercise)
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-plus" }),
-                        _vm._v(
-                          " " + _vm._s(exercise.name) + "\n                  "
-                        )
-                      ]
-                    )
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _c(
+            { staticClass: "w-full flex" },
+            _vm._l(_vm.exercises, function(exercise) {
+              return _c(
                 "div",
-                { staticClass: "flex w-full items-end justify-between mb-2" },
+                { key: exercise.id, staticClass: "w-auto d-block mb-2 mr-2" },
                 [
                   _c(
                     "button",
                     {
-                      staticClass: "bg-orange-500 p-2 text-white",
+                      staticClass: "d-inline-block bg-blue-800 p-2 text-white",
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
-                          return _vm.addRest()
+                          return _vm.addExercise(exercise)
                         }
                       }
                     },
                     [
-                      _c("i", { staticClass: "fas fa-head-side-cough" }),
-                      _vm._v(" Add Rest")
+                      _c("i", { staticClass: "fas fa-plus" }),
+                      _vm._v(
+                        " " + _vm._s(exercise.name) + "\n                  "
+                      )
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.restTime,
-                        expression: "restTime"
-                      }
-                    ],
-                    staticClass: "w-1/4 p-2",
-                    attrs: { type: "text", value: "30" },
-                    domProps: { value: _vm.restTime },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.restTime = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("Seconds")])
+                  )
                 ]
               )
-            ],
-            2
-          )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex w-full items-end mb-2" }, [
+            _c(
+              "button",
+              {
+                staticClass: "bg-orange-500 p-2 text-white",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.addRest()
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fas fa-head-side-cough" }),
+                _vm._v(" Add Rest")
+              ]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.restTime,
+                  expression: "restTime"
+                }
+              ],
+              staticClass: "w-20 p-2 mr-2",
+              attrs: { type: "text", value: "30" },
+              domProps: { value: _vm.restTime },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.restTime = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", [_vm._v("Seconds")])
+          ])
         ])
       ])
     : _vm._e()
@@ -69348,7 +69406,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SiteHeader_vue_vue_type_template_id_754b8cc4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SiteHeader.vue?vue&type=template&id=754b8cc4& */ "./resources/js/components/layout/SiteHeader.vue?vue&type=template&id=754b8cc4&");
 /* harmony import */ var _SiteHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SiteHeader.vue?vue&type=script&lang=js& */ "./resources/js/components/layout/SiteHeader.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SiteHeader.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -69356,7 +69416,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _SiteHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _SiteHeader_vue_vue_type_template_id_754b8cc4___WEBPACK_IMPORTED_MODULE_0__["render"],
   _SiteHeader_vue_vue_type_template_id_754b8cc4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -69385,6 +69445,22 @@ component.options.__file = "resources/js/components/layout/SiteHeader.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SiteHeader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/SiteHeader.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SiteHeader.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/SiteHeader.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SiteHeader_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 

@@ -87,5 +87,7 @@ export default {
 </script>
 
 <style>
-
+header {
+    z-index: 1;
+}
 </style>

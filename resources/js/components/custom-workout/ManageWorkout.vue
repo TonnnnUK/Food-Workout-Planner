@@ -4,9 +4,9 @@
             <page-subtitle class="my-5">Routine</page-subtitle>
         </div>
 
-        <section class="flex">
-            <div class="flex flex-col w-2/3 px-3">
-                <emphasis-title v-if="routine.length < 1">Select an exercise to add sets <i class="fas fa-long-arrow-alt-right"></i></emphasis-title>
+        <section class="flex flex-col">
+            <div class="flex flex-col w-full lg:w-8/12 mb-3">
+                <emphasis-title v-if="routine.length < 1">Select an exercise to add sets</emphasis-title>
                 <div v-for="item in routine" :key="item.number"
                     class="excercise-card w-full mb-5 p-0"
                 >
@@ -14,16 +14,17 @@
                         :class="item.complete ? 'bg-green-500' : ''"
                         v-if="item.type == 'exercise'">
                         <button class="mr-3 text-red-800" @click="removeSet(routine)"><i class="fas fa-times"></i></button>
-                        <label class="w-full" for="">{{item.exercise.name}}</label>
+                        <label class="w-full lg:w-7/12" for="">{{item.exercise.name}}</label>
                         
-                        <label for="">
-                            weight: <input type="text" class="bg-gray-200 w-1/4 text-center" v-model="item.weight">
-                            <select name="" id="" v-model="item.metric">
-                                <option value="select">select</option>
+                        <div>
+                            <label for="">
+                                weight: <input type="text" class="bg-gray-200 w-1/4 text-center" v-model="item.weight">
+                            </label>
+                            <select class="w-10" name="metric" v-model="item.metric">
                                 <option value="kg">kg</option>
                                 <option value="bodyweight">bodyweight</option>
                             </select>
-                        </label>
+                        </div>
                         
                         <label for="">
                             reps: <input type="text" class="bg-gray-200 w-1/4 text-center" v-model="item.reps">
@@ -39,25 +40,23 @@
                 </div>
 
             </div>
-            <div class="w-1/3">
-                <div class="d-block w-full mb-2" v-for="exercise in exercises" :key="exercise.id">
+            <div class="w-full flex">
+                <div class="w-auto d-block mb-2 mr-2" v-for="exercise in exercises" :key="exercise.id">
                     <button class="d-inline-block bg-blue-800 p-2 text-white" 
                             type="button"
                             @click="addExercise(exercise)">
                                 <i class="fas fa-plus"></i> {{ exercise.name }}
                     </button> 
                 </div>
-
-                <div class="flex w-full items-end justify-between mb-2">
-                    <button class="bg-orange-500 p-2 text-white" 
-                            @click="addRest()"
-                            type="button"><i class="fas fa-head-side-cough"></i> Add Rest</button> 
-                    
-                    <input type="text" v-model="restTime" value="30" 
-                        class="w-1/4 p-2"> 
-                    <span>Seconds</span>
-                </div>
-            </div>   
+            </div>
+            <div class="flex w-full items-end mb-2">
+                <button class="bg-orange-500 p-2 text-white" 
+                        @click="addRest()"
+                        type="button"><i class="fas fa-head-side-cough"></i> Add Rest</button> 
+                
+                <input type="text" v-model="restTime" value="30" class="w-20 p-2 mr-2"> 
+                <span>Seconds</span>
+            </div>
         </section>     
   </div>
 </template>
@@ -104,7 +103,7 @@ export default {
             insert.number = this.itemCount
             insert.exercise = exercise
             insert.weight = 0
-            insert.metric = 'select'
+            insert.metric = 'kg'
             insert.reps = 10    
             insert.complete = false    
             this.routine.push(insert)
@@ -121,7 +120,7 @@ export default {
         },
 
         removeSet(item){
-            this.routine.splice(this.routine.indexOf(item)-1, 1)
+            this.routine.splice(this.routine.indexOf(item), 1)
         },
         
         saveWorkout(){
